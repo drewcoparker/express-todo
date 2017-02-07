@@ -2,8 +2,10 @@ extends layout
 
 block content
     
-    div.container
+    div.container#main-wrapper
         div.row
+            -if (msg)
+                h3= msg
             form.form-inline.text-center(action="/addNew" method="post")
                 div.form-group#my-form-group
                     label.sr-only New Task
