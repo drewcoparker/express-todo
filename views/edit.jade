@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    
+    div.container
+        div.row
+            h1 Edit below
+            form.form-inline.text-center(action="/edit/#{task.id}" method="post")
+                div.form-group#my-form-group
+                    label.sr-only New Task
+                    div.input-group
+                        input.form-control(type="text" placeholder="New Task" name="newTaskString" value="#{task.task_name}")
+                    div.input-group
+                        input.form-control(type="text" placeholder="Task deadline" name="newTaskDeadline" value="#{task.task_date}")
+                    button.btn.btn-primary(type="submit") Edit task
+    
+                
+                                    
+                                

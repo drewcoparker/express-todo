@@ -1,0 +1,37 @@
+extends layout
+
+block content
+    
+    div.container
+        div.row
+            form.form-inline.text-center(action="/addNew" method="post")
+                div.form-group#my-form-group
+                    label.sr-only New Task
+                    div.input-group
+                        input.form-control(type="text" placeholder="Enter task" name="newTaskString")
+                    div.input-group
+                        input.form-control(type="text" placeholder="YYYY/MM/DD" name="newTaskDeadline")
+                    button.btn.btn-info.btn-sm(type="submit") Add task
+          
+        div.row
+            div.table-wrapper.col-sm-8.col-sm-offset-2
+                table.table.table-bordered.table-striped
+                    tr
+                        th #
+                        th Todo task
+                        th When
+                        th Edit
+                        th Delete
+                    -if (taskArray.length === 0)
+                        tr
+                            td Your task list is empty. Add a task and get busy!
+                    -else
+                        -for (task of taskArray)
+                            tr 
+                                td= task.id
+                                td= task.task_name
+                                td= task.task_date
+                                td: a(href="/edit/#{task.id}") Edit
+                                td: a(href="/delete/#{task.id}") Delete
+                                    
+                                

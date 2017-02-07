@@ -1,0 +1,17 @@
+body {
+  padding: 50px;
+  font: 14px "Futura", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#my-form-group * {
+    padding: 7px;
+}
+
+table {
+    margin-top: 40px;
+    
+}
